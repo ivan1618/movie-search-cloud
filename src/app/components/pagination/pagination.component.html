@@ -1,0 +1,11 @@
+<div class="pagination d-flex justify-content-center pb-3">
+    <div class="buttons d-flex">
+        <button class="mx-2" [disabled]="data.page === 1" (click)="pageChange(data.page-1)">
+            <img src="../../../assets/left-arrow.svg">
+        </button>
+        <div class="m-auto mb-2">{{data.page}}/{{data.total_pages}}</div>
+        <button class="mx-2" [disabled]="data.page === data.total_pages" (click)="pageChange(data.page+1)">
+            <img class="right" src="../../../assets/left-arrow.svg">
+        </button>
+    </div>
+</div>

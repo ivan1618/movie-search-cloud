@@ -1,0 +1,48 @@
+<div class="main">
+    <div class="container">
+        <div class="pt-4">
+            <ms-search-input [isLoading]="(isLoading | async) ?? false"
+                             (search)="searchMovie($event, 1)">
+                <ms-language-selector></ms-language-selector>
+            </ms-search-input>
+        </div>
+        <div *ngIf="!movies && !(isLoading | async) && !hasError"
+             class="banner">
+            {{'SEARCH_PAGE.SEARCH_BANNER' | translate}}
+        </div>
+        <div *ngIf="hasError" class="error-banner">
+            {{'SEARCH_PAGE.ERROR_BANNER' | translate}}
+        </div>
+        <ng-container *ngIf="{value: isCached | async} as cached">
+            <ng-container [ngSwitch]="cached.value" *ngIf="movies?.length">
+                <div *ngSwitchCase="true"
+                     class="third-party-banner">
+                    {{'SEARCH_PAGE.FROM_CACHE' | translate}}
+                </div>
+                <div *ngSwitchCase="false"
+                     class="third-party-banner">
+                    {{'SEARCH_PAGE.3RD_PARTY' | translate}}
+                </div>
+            </ng-container>
+        </ng-container>
+        <div *ngIf="isLoading | async" class="loader"></div>
+
+        <div *ngIf="movies"
+             class="container-fluid px-0 movies row m-auto">
+            <div *ngFor="let movie of movies"
+                 class="col-xs-12 col-sm-6 col-lg-3 p-4 movie-card">
+                <ms-movie-card [movie]="movie" (moreInfo)="showMovieInfo(movie)"></ms-movie-card>
+            </div>
+            <div *ngIf="!movies.length" class="error-banner">
+                {{'SEARCH_PAGE.NO_MATCH' | translate}}
+            </div>
+        </div>
+        <div class="pagination justify-content-center">
+            <ms-pagination *ngIf="paginationData && paginationData.total_pages > 1"
+                           [data]="paginationData"
+                           (changePage)="searchMovie(searchText, $event)"></ms-pagination>
+        </div>
+    </div>
+</div>
+
+<ms-movie-info *ngIf="selectedMovie" [movie]="selectedMovie" (close)="selectedMovie = undefined"></ms-movie-info>

@@ -1,0 +1,22 @@
+{
+    "MOVIE_CARD": {
+        "INFO": "Movie info"
+    },
+    "MOVIE_INFO": {
+        "TITLE": "Title:",
+        "RELEASE_DATE": "Release date:",
+        "DESCRIPTION": "Description:",
+        "NO_RELEASE_DATE": "No release date yet"
+    },
+    "SEARCH": {
+        "PLACEHOLDER": "Search a movie...",
+        "BUTTON": "Search"
+    },
+    "SEARCH_PAGE": {
+        "SEARCH_BANNER": "To search a movie, type the name of it in the search bar",
+        "ERROR_BANNER": "Something went wrong",
+        "FROM_CACHE": "Results are from cache",
+        "3RD_PARTY": "Results are from a 3rd party api",
+        "NO_MATCH": "There is no match for your input"
+    }
+}

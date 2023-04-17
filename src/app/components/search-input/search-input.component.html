@@ -1,0 +1,11 @@
+<div class="container-fluid d-flex justify-content-between px-0 align-items-center">
+    <input class="search-input"
+           type="text"
+           [placeholder]="'SEARCH.PLACEHOLDER' | translate"
+           [formControl]="inputControl"
+           (keyup.enter)="search()"
+    />
+    <ng-content></ng-content>
+    <button class="btn btn-dark rounded-4" [disabled]="isLoading"
+            (click)="search()">{{'SEARCH.BUTTON' | translate}}</button>
+</div>

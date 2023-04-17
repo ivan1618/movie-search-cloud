@@ -1,0 +1,6 @@
+<div class="movie-card">
+    <img class="w-100" [src]="movieImage ?? '../../../assets/image-placeholder.jpg'">
+    <div class="text-center p-2 info" (click)="moreInfo()">
+        {{'MOVIE_CARD.INFO' | translate}}
+    </div>
+</div>

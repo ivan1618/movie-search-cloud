@@ -1,0 +1,22 @@
+{
+    "MOVIE_CARD": {
+        "INFO": "Film információ"
+    },
+    "MOVIE_INFO": {
+        "TITLE": "Cím:",
+        "RELEASE_DATE": "Megjelenés dátuma:",
+        "DESCRIPTION": "Leírás:",
+        "NO_RELEASE_DATE": "Még nincs meghatározva"
+    },
+    "SEARCH": {
+        "PLACEHOLDER": "Keress egy filmet...",
+        "BUTTON": "Keresés"
+    },
+    "SEARCH_PAGE": {
+        "SEARCH_BANNER": "Kereséshez írd be a fenti mezőbe a film címét",
+        "ERROR_BANNER": "Valami hiba történt",
+        "FROM_CACHE": "Az eredmények a gyorsítótárból származnak",
+        "3RD_PARTY": "Az eredmények egy harmadik féltől származó API-tól származnak",
+        "NO_MATCH": "Nincs találat"
+    }
+}

@@ -1,0 +1,13 @@
+<div class="language-container">
+    <div class="language-select">
+        <div class="select">
+            <ng-container *ngFor="let lang of languages">
+                <div class="flag" [ngClass]="{'selected': selectedLanguage === lang}">
+                    <a (click)="setLanguage(lang)">
+                        <img src="../../../assets/flags/{{lang}}.svg"/>
+                    </a>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

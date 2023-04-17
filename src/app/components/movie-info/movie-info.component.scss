@@ -1,0 +1,122 @@
+@import "variables";
+
+.ms-modal {
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
+    animation-name: change-background;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+    .ms-modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        top: 3em;
+        border-radius: 15px;
+        width: 65%;
+        @media screen and (max-width: 576px) {
+            width: 80%;
+        }
+        position: relative;
+        animation-name: scale-to-max;
+        animation-duration: 0.5s;
+
+        .content {
+            .close {
+                color: black;
+                background-color: white;
+                border-radius: 50%;
+                top: 5px;
+                right: 5px;
+                text-align: center;
+                height: 45px;
+                width: 45px;
+                position: absolute;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            img {
+                aspect-ratio: 16/9;
+                object-fit: contain;
+                background-color: black;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            .details {
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                background-color: $primary-gray;
+                color: white;
+                position: relative;
+                margin-bottom: 100px;
+
+                > * {
+                    margin: 5px;
+                }
+
+                .container-fluid {
+                    span {
+                        font-size: 26px;
+                        font-weight: bold;
+                        color: #d2d2d2;
+                    }
+                }
+
+                .percentage-container {
+                    @media screen and (min-width: 576px) {
+                        position: absolute;
+                        top: 15px;
+                        right: 10px;
+                        margin: 0;
+                    }
+
+                    margin-top: 20px;
+
+                    .percentage {
+                        margin-right: 0;
+
+                        span {
+                            color: black;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@keyframes scale-to-max {
+    from {
+        transform: scale(0.1);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes change-background {
+    0% {
+        background: rgb(0, 0, 0, 0);
+    }
+    100% {
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+
+

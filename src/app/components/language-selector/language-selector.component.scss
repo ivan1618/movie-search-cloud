@@ -1,0 +1,31 @@
+.language-container {
+    position: relative;
+    width: 40px;
+    height: 20px;
+
+    .language-select {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        img {
+            max-height: 20px;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        div.flag:not(.selected) {
+            display: none;
+        }
+
+        div.flag.selected {
+            display: block;
+        }
+
+        &:hover div.flag {
+            display: block;
+        }
+    }
+}

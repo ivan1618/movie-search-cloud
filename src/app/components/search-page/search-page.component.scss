@@ -1,0 +1,44 @@
+@import "variables";
+
+.main {
+    background-color: $primary-gray;
+    background-image: linear-gradient(to bottom, black 0%, $primary-gray 15%);
+    min-height: 100vh;
+
+    .banner {
+        margin: 25px auto auto;
+        padding: 10px;
+        width: fit-content;
+        background-color: #ffd280;
+        border: 3px solid #ffb530;
+        border-radius: 10px;
+        color: black;
+    }
+
+    .error-banner {
+        margin: 25px auto auto;
+        padding: 10px;
+        width: fit-content;
+        background-color: #ff8080;
+        border: 3px solid #ff3030;
+        border-radius: 10px;
+        color: black;
+    }
+
+    .third-party-banner {
+        margin-top: 15px;
+        padding: 8px;
+        width: fit-content;
+        background-color: #ffd280;
+        border: 3px solid #ffb530;
+        border-radius: 10px;
+        color: black;
+    }
+
+    .movies {
+        .movie-card {
+            z-index: 999;
+        }
+    }
+
+}
