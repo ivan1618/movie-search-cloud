@@ -13,14 +13,18 @@ export class LanguageSelectorComponent {
 
     constructor(private readonly translateService: TranslateService) {
         this.selectedLanguage = this.translateService.currentLang;
+        this.setLanguageArray(this.selectedLanguage);
     }
 
     setLanguage(lang: string): void {
         this.translateService.use(lang);
         this.selectedLanguage = lang;
+        this.setLanguageArray(lang);
+    }
+
+    private setLanguageArray(lang: string): void {
         const newLanguageList = this.languages.filter(lg => lg !== lang);
         newLanguageList.unshift(lang);
         this.languages = newLanguageList;
     }
-
 }
